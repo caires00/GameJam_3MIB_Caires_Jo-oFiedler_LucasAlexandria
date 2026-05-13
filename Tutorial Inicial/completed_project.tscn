@@ -87,13 +87,16 @@ tile_set = ExtResource("3_vklf7")
 layer = 100
 
 [node name="UIHealthBar" parent="UILayer" unique_id=1980405059 instance=ExtResource("4_mukgi")]
-offset_left = 32.0
-offset_top = 40.0
-offset_right = 381.0
-offset_bottom = 113.0
+offset_left = 152.0
+offset_top = 33.000008
+offset_right = 501.0
+offset_bottom = 106.00001
+rotation = 1.5724686
 
 [node name="Player" parent="." unique_id=1528357985 instance=ExtResource("4_idksr")]
 position = Vector2(768, 512)
+max_health = 10
+speed = 700.0
 
 [node name="RoomA" parent="." unique_id=507904935 instance=ExtResource("5_d5k6w")]
 
