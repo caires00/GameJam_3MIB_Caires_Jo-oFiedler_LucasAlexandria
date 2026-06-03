@@ -10,6 +10,9 @@ size = Vector2(1166.5, 112)
 
 [node name="chao" type="StaticBody2D" parent="." unique_id=1801909439]
 
+[node name="player" parent="chao" unique_id=1089091266 instance=ExtResource("2_6phgx")]
+position = Vector2(583, 314)
+
 [node name="Sprite2D" type="Sprite2D" parent="chao" unique_id=443039671]
 position = Vector2(579.5, 589.5)
 scale = Vector2(16.414288, 1.614286)
@@ -18,6 +21,3 @@ texture = ExtResource("1_k5f4k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chao" unique_id=1561063719]
 position = Vector2(587.75, 591)
 shape = SubResource("RectangleShape2D_81xng")
-
-[node name="player" parent="chao" unique_id=1089091266 instance=ExtResource("2_6phgx")]
-position = Vector2(583, 314)
