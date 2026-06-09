@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6lv1gobx4c6e"]
 
 [ext_resource type="Texture2D" uid="uid://dlu3bnv63t4nu" path="res://Assets/kenney_platformer-art-deluxe/Base pack/Tiles/castleCenter.png" id="1_k5f4k"]
-[ext_resource type="PackedScene" uid="uid://dbmnsy3l40m26" path="res://player.tscn" id="2_6phgx"]
+[ext_resource type="PackedScene" uid="uid://dbmnsy3l40m26" path="res://Scripts/player.tscn" id="2_6phgx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81xng"]
 size = Vector2(1166.5, 112)
