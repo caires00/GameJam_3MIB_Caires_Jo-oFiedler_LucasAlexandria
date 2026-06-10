@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cmwkw5ttedk1f"]
 
 [ext_resource type="Texture2D" uid="uid://3q0ja208b0of" path="res://Assets/kenney_platformer-art-deluxe/Base pack/Enemies/slimeWalk1.png" id="1_1vr66"]
+[ext_resource type="Script" uid="uid://baksltojyu016" path="res://Scenes/inimigo.gd" id="1_8p8dk"]
 [ext_resource type="Texture2D" uid="uid://drj1pfa56lffq" path="res://Assets/kenney_platformer-art-deluxe/Base pack/Enemies/slimeWalk2.png" id="2_8p8dk"]
+[ext_resource type="PackedScene" uid="uid://dbsn8njobfmpv" path="res://Scenes/killzone.tscn" id="4_ayero"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ayero"]
 radius = 45.0
@@ -21,8 +23,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qpp8r"]
+radius = 49.010204
+
 [node name="Inimigo" type="CharacterBody2D" unique_id=506768209]
 position = Vector2(300, 185)
+script = ExtResource("1_8p8dk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1844399633]
 position = Vector2(-4, 8)
@@ -33,3 +39,20 @@ position = Vector2(3, -1)
 scale = Vector2(2.16, 2.107143)
 sprite_frames = SubResource("SpriteFrames_qpp8r")
 animation = &"walikng"
+
+[node name="FloorLeft" type="RayCast2D" parent="." unique_id=2027511586]
+target_position = Vector2(-20, 10)
+
+[node name="FloorRight" type="RayCast2D" parent="." unique_id=163542874]
+target_position = Vector2(20, 10)
+
+[node name="Timer" type="Timer" parent="." unique_id=832619511]
+autostart = true
+
+[node name="killzone" parent="." unique_id=1752717475 instance=ExtResource("4_ayero")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=193832845]
+position = Vector2(-4, 7)
+shape = SubResource("CircleShape2D_qpp8r")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
