@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Primeiro Jogo"
-run/main_scene="uid://b6lv1gobx4c6e"
+run/main_scene="uid://bosuwdga7acs2"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://t1od47otadg3"
 
 [input]
 

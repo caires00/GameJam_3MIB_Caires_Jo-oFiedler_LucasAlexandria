@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cw0wege4cg5g0"]
+
+[ext_resource type="Texture2D" uid="uid://c6418bydndg2i" path="res://Assets/kenney_platformer-art-deluxe/Base pack/bg.png" id="1_dygfn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dygfn"]
+font_size = 30
+font_color = Color(0.007843138, 0, 0, 1)
+
+[node name="MenuInicial" type="Control" unique_id=1938084371]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameBackground" type="TextureRect" parent="." unique_id=1612680127]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dygfn")
+
+[node name="TituloJogoLabel" type="Label" parent="." unique_id=340766631]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 157.0
+offset_right = 691.0
+offset_bottom = 199.0
+text = "Behind the Signs"
+label_settings = SubResource("LabelSettings_dygfn")
+
+[node name="JogarButton" type="Button" parent="." unique_id=167641035]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 500.0
+offset_top = 263.0
+offset_right = 634.0
+offset_bottom = 312.0
+text = "JOGAR"

@@ -3,8 +3,25 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -550.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var hud: CanvasLayer = $"../HUD"
+
+@onready var posicao_inicial: Marker2D = $"../PosicaoInicial"
+# ... outras funções
+# função que recebe a quantidade de dano via parâmetro e aplica à vidas
+func tomar_dano(dano:int) -> void:
+	GameManager.vidas -= dano
+	if GameManager.vidas <= 0:
+		print("Game Over")
+	else:
+		respawn() #função respawn chamada
+	hud.atualizar_vidas()
+# função que reposiciona o personagem na posição do Marker2D
+func respawn() -> void:
+	position = posicao_inicial.position
+
 func die():
-	get_tree().reload_current_scene()
+	tomar_dano(1)
+
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

@@ -5,10 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://drj1pfa56lffq" path="res://Assets/kenney_platformer-art-deluxe/Base pack/Enemies/slimeWalk2.png" id="2_8p8dk"]
 [ext_resource type="PackedScene" uid="uid://dbsn8njobfmpv" path="res://Scenes/killzone.tscn" id="4_ayero"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ayero"]
-radius = 45.0
-height = 90.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_qpp8r"]
 animations = [{
 "frames": [{
@@ -23,36 +19,46 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ayero"]
+radius = 31.707306
+height = 90.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_qpp8r"]
-radius = 49.010204
+radius = 34.289017
 
 [node name="Inimigo" type="CharacterBody2D" unique_id=506768209]
 position = Vector2(300, 185)
 script = ExtResource("1_8p8dk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1844399633]
-position = Vector2(-4, 8)
-shape = SubResource("CapsuleShape2D_ayero")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1905082144]
-position = Vector2(3, -1)
+position = Vector2(1, -6)
 scale = Vector2(2.16, 2.107143)
 sprite_frames = SubResource("SpriteFrames_qpp8r")
 animation = &"walikng"
+autoplay = "walikng"
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1844399633]
+position = Vector2(-6, -6)
+scale = Vector2(1.45, 0.67)
+skew = 0.2268928
+shape = SubResource("CapsuleShape2D_ayero")
 
 [node name="FloorLeft" type="RayCast2D" parent="." unique_id=2027511586]
-target_position = Vector2(-20, 10)
+target_position = Vector2(-66, 1)
 
 [node name="FloorRight" type="RayCast2D" parent="." unique_id=163542874]
-target_position = Vector2(20, 10)
+target_position = Vector2(52, 0)
 
 [node name="Timer" type="Timer" parent="." unique_id=832619511]
 autostart = true
 
 [node name="killzone" parent="." unique_id=1752717475 instance=ExtResource("4_ayero")]
+position = Vector2(-15, -9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=193832845]
-position = Vector2(-4, 7)
+position = Vector2(8, -5.47)
+scale = Vector2(0.96, 1.11)
 shape = SubResource("CircleShape2D_qpp8r")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

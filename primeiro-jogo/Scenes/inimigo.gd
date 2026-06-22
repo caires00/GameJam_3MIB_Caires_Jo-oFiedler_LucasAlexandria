@@ -4,23 +4,24 @@ const SPEED = 80.0
 const GRAVITY = 800.0
 
 var direction = 1
+@onready var floor_left: RayCast2D = $FloorLeft
+@onready var floor_right: RayCast2D = $FloorRight
+
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-
-@onready var left_limit: Marker2D = $"../left_limit"
-@onready var right_limit: Marker2D = $"../right_limit"
 
 func _physics_process(delta):
 	# Aplica gravidade
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
-
-	# Verifica os limites
-	if global_position.x >= right_limit.global_position.x:
+	
+	
+	if  floor_left.is_colliding():
+		direction = -1
+	if  floor_right.is_colliding():
 		direction = -1
 
-	if global_position.x <= left_limit.global_position.x:
-		direction = 1
+
 
 	# Movimento horizontal
 	velocity.x = direction * SPEED
