@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://cw0wege4cg5g0"]
 
 [ext_resource type="Texture2D" uid="uid://c6418bydndg2i" path="res://Assets/kenney_platformer-art-deluxe/Base pack/bg.png" id="1_dygfn"]
+[ext_resource type="Script" uid="uid://dy5568vh6qd7x" path="res://Scenes/menu_inicial.gd" id="1_r68fw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dygfn"]
 font_size = 30
 font_color = Color(0.007843138, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_envsn"]
+bg_color = Color(0.03137255, 0.039215688, 0.21176471, 1)
 
 [node name="MenuInicial" type="Control" unique_id=1938084371]
 layout_mode = 3
@@ -13,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_r68fw")
 
 [node name="GameBackground" type="TextureRect" parent="." unique_id=1612680127]
 layout_mode = 1
@@ -25,18 +30,23 @@ texture = ExtResource("1_dygfn")
 
 [node name="TituloJogoLabel" type="Label" parent="." unique_id=340766631]
 layout_mode = 0
-offset_left = 450.0
-offset_top = 157.0
-offset_right = 691.0
-offset_bottom = 199.0
+offset_left = 446.0
+offset_top = 215.0
+offset_right = 687.0
+offset_bottom = 257.0
 text = "Behind the Signs"
 label_settings = SubResource("LabelSettings_dygfn")
 
 [node name="JogarButton" type="Button" parent="." unique_id=167641035]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 500.0
-offset_top = 263.0
-offset_right = 634.0
-offset_bottom = 312.0
+offset_left = 498.0
+offset_top = 312.0
+offset_right = 632.0
+offset_bottom = 361.0
+theme_override_colors/font_color = Color(0.34509805, 0.8745098, 0.8745098, 1)
+theme_override_colors/font_hover_color = Color(0.039215688, 0.9490196, 0.9490196, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_envsn")
 text = "JOGAR"
+
+[connection signal="pressed" from="JogarButton" to="." method="_on_jogar_button_pressed"]
