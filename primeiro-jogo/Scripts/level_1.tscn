@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://brvexm2uh2ugf" path="res://Scenes/coin.tscn" id="7_4eaml"]
 [ext_resource type="Script" uid="uid://t1od47otadg3" path="res://Scripts/game_manager.gd" id="8_yxafy"]
 [ext_resource type="PackedScene" uid="uid://b77p4cvlwlnaw" path="res://Scenes/hud.tscn" id="9_qtut7"]
+[ext_resource type="PackedScene" uid="uid://hyfgws2qtu2n" path="res://Scenes/pause_menu.tscn" id="10_qtut7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ihfcg"]
 texture = ExtResource("1_kiehh")
@@ -7049,3 +7050,5 @@ script = ExtResource("8_yxafy")
 
 [node name="PosicaoInicial" type="Marker2D" parent="." unique_id=935692823]
 position = Vector2(-1385, 83)
+
+[node name="PauseMenu" parent="." unique_id=194813372 instance=ExtResource("10_qtut7")]

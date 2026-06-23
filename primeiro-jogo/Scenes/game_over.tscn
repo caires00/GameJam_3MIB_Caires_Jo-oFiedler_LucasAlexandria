@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://kaioddmvk5q8"]
+
+[ext_resource type="Script" uid="uid://d3q7adghixtk8" path="res://game_over.gd" id="1_8fo1c"]
+[ext_resource type="Texture2D" uid="uid://c6418bydndg2i" path="res://Assets/kenney_platformer-art-deluxe/Base pack/bg.png" id="2_ek8ke"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8fo1c"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[node name="GameOver" type="Control" unique_id=1643958164]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8fo1c")
+
+[node name="GameOverBackground" type="TextureRect" parent="." unique_id=1334507763]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 646.0
+texture = ExtResource("2_ek8ke")
+
+[node name="GameOverLabel" type="Label" parent="." unique_id=1279661112]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 248.0
+offset_right = 663.0
+offset_bottom = 290.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_8fo1c")
+
+[node name="TentarNovamenteButton" type="Button" parent="." unique_id=1797929050]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 328.0
+offset_right = 655.0
+offset_bottom = 359.0
+theme_override_colors/font_color = Color(0.007843138, 0.8745098, 0.8745098, 1)
+theme_override_colors/font_hover_color = Color(0.039215688, 0.9490196, 0.9490196, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.039215688, 0.9490196, 0.9490196, 1)
+text = "Tentar Novamente"
+
+[connection signal="pressed" from="TentarNovamenteButton" to="." method="_on_tentar_novamente_button_pressed"]

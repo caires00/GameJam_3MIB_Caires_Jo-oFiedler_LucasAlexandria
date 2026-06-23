@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://hyfgws2qtu2n"]
+
+[ext_resource type="Script" uid="uid://bm10lhqw51j0u" path="res://Scripts/pause_menu.gd" id="1_emv3i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wyi4u"]
+font_size = 30
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=194813372]
+process_mode = 3
+script = ExtResource("1_emv3i")
+
+[node name="Control" type="Control" parent="." unique_id=1723020314]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseBackground" type="ColorRect" parent="Control" unique_id=1551898170]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.3764706)
+
+[node name="PausadoLabel" type="Label" parent="Control" unique_id=279569560]
+layout_mode = 0
+offset_left = 493.0
+offset_top = 177.0
+offset_right = 635.0
+offset_bottom = 219.0
+text = "PAUSADO"
+label_settings = SubResource("LabelSettings_wyi4u")
+
+[node name="ContinuarButton" type="Button" parent="Control" unique_id=13504922]
+layout_mode = 0
+offset_left = 477.0
+offset_top = 307.0
+offset_right = 662.0
+offset_bottom = 357.0
+theme_override_colors/font_hover_color = Color(0.91764706, 0.16862746, 0.47058824, 1)
+theme_override_font_sizes/font_size = 30
+text = "CONTINUAR"
+
+[node name="MenuButton" type="Button" parent="Control" unique_id=702746383]
+layout_mode = 0
+offset_left = 444.0
+offset_top = 395.0
+offset_right = 703.0
+offset_bottom = 445.0
+theme_override_colors/font_pressed_color = Color(1, 0.40784314, 1, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0, 0.9490196, 1)
+theme_override_font_sizes/font_size = 30
+text = "MENU PRINCIPAL"
+
+[connection signal="pressed" from="Control/ContinuarButton" to="." method="_on_continuar_button_pressed"]
+[connection signal="pressed" from="Control/MenuButton" to="." method="_on_menu_button_pressed"]

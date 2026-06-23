@@ -5,15 +5,17 @@ const JUMP_VELOCITY = -550.0
 
 @onready var hud: CanvasLayer = $"../HUD"
 
+var vidas = 3
+
 @onready var posicao_inicial: Marker2D = $"../PosicaoInicial"
 # ... outras funções
 # função que recebe a quantidade de dano via parâmetro e aplica à vidas
 func tomar_dano(dano:int) -> void:
 	GameManager.vidas -= dano
-	if GameManager.vidas <= 0:
-		print("Game Over")
+	if vidas <= 0:
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 	else:
-		respawn() #função respawn chamada
+		respawn()
 	hud.atualizar_vidas()
 # função que reposiciona o personagem na posição do Marker2D
 func respawn() -> void:

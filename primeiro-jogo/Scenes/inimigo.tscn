@@ -24,7 +24,7 @@ radius = 31.707306
 height = 90.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qpp8r"]
-radius = 34.289017
+radius = 40.62721
 
 [node name="Inimigo" type="CharacterBody2D" unique_id=506768209]
 position = Vector2(300, 185)
@@ -58,7 +58,7 @@ position = Vector2(-15, -9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=193832845]
 position = Vector2(8, -5.47)
-scale = Vector2(0.96, 1.11)
+scale = Vector2(1.115, 0.765)
 shape = SubResource("CircleShape2D_qpp8r")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

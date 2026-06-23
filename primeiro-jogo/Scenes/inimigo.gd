@@ -17,7 +17,7 @@ func _physics_process(delta):
 	
 	
 	if  floor_left.is_colliding():
-		direction = -1
+		direction = 1
 	if  floor_right.is_colliding():
 		direction = -1
 
