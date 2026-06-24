@@ -6,6 +6,9 @@ signal collected
 @onready var particles: GPUParticles2D = $Particles
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+
+@onready var hud: CanvasLayer = $"../HUD"
+
 # Ao ser criado na tela, o sinal body_entered (sinal emitido automaticamente
 # quando um corpo físico entra na área do nó Area2D) é conectado à função
 # on_body_entered
@@ -19,6 +22,8 @@ func _on_body_entered(body):
 		if body.name == "player":
 # printe no console "+1"
 			print("+1")
+			GameManager.moedas += 1
+			hud.atualizar_moedas()
 # Emita o sinal collected (criado no início do código)
 			collected.emit()
 # Deixa a moeda invisível

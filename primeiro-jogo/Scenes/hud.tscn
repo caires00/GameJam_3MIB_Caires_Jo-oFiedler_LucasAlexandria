@@ -16,6 +16,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="CoinLabel" type="Label" parent="Control" unique_id=1814565227]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 28.0
+offset_right = 224.0
+offset_bottom = 51.0
+text = "Moedas: "
+label_settings = SubResource("LabelSettings_e0onf")
+
 [node name="TextureRect" type="TextureRect" parent="Control" unique_id=1815095219]
 layout_mode = 0
 offset_left = 285.0

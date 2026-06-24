@@ -6998,7 +6998,7 @@ tile_map_data = PackedByteArray("AAC+/wIAAAABAAMAAAAdAAIAAAABAAMAAADy/wIAAAABAAM
 tile_set = SubResource("TileSet_5hph3")
 
 [node name="player" parent="." unique_id=1089091266 instance=ExtResource("4_4wbuc")]
-position = Vector2(3089, 271)
+position = Vector2(-1351, 57)
 
 [node name="Inimigo" parent="." unique_id=506768209 instance=ExtResource("5_yxafy")]
 position = Vector2(3771, 440)
@@ -7042,6 +7042,15 @@ position = Vector2(13, -89)
 
 [node name="Coin3" parent="." unique_id=1249584582 instance=ExtResource("7_4eaml")]
 position = Vector2(98, -87)
+
+[node name="Coin7" parent="." unique_id=1092373887 instance=ExtResource("7_4eaml")]
+position = Vector2(5727, 394)
+
+[node name="Coin8" parent="." unique_id=370202289 instance=ExtResource("7_4eaml")]
+position = Vector2(5662, 395)
+
+[node name="Coin9" parent="." unique_id=912741945 instance=ExtResource("7_4eaml")]
+position = Vector2(5791, 395)
 
 [node name="GameManager" type="Node2D" parent="." unique_id=9620343]
 script = ExtResource("8_yxafy")
